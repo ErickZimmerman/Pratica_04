@@ -19,7 +19,7 @@ test("Deve retornar 200 no PUT", async function(){
     expect (response.status).toBe(200);
 })
 
-test("Deve retornar 200 no DELETE", async function(){
+test("Deve retornar 204 no DELETE", async function(){
     const response = await request.delete("/")
     expect (response.status).toBe(204);
 })

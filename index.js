@@ -15,20 +15,26 @@ app.use(function(req, res, next){
 
 app.get("/", function(req, res){
     console.log(req.url);
-    
+    res.json ({status:"200", message:"Você fez uma requisição GET"})
+})
 
+app.post("/", function(req, res){
+    console.log(req.url);
+    res.status(201).json ({status:"201", message:"Você fez uma requisição GET"})
 })
 
 app.put("/", function(req, res){
-    res.status(200).end()
+    res.status(200).end();
+    console.log(req.url);
     res.json ({status:"201", message:"Você fez uma requisição PUT"});
 });
 
+app.delete("/", function(req, res){
+    console.log(req.url);
+    res.status(204).json ({status:"204", message:"Você fez uma requisição DELETE"})
+  
+});
 
-app.post("/", function(req, res){
-    console.log(req.body);
-    res.json ({status:"201", message:"Você fez uma requisição GET"})
-})
 
 
 module.exports = app
